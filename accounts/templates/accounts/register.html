@@ -1,0 +1,46 @@
+{% extends "accounts/main.html" %} {% block content %}
+
+<div class="container">
+  <div class="row mx-0 justify-contentcente-r">
+    <div class="col-md-7 col-lg-5 px-lg-2 col-xl-4 px-xl-0 px-xxl-3">
+      <h3>Register</h3>
+      <form method="POST" class="w-100 rounded-1 p-4 border bg-white" action="">
+        {% csrf_token %}
+        <label class="d-block mb-4">
+          <span class="form-label d-block">Username</span>
+          {{form.username}}
+        </label>
+
+        <label class="d-block mb-4">
+          <span class="form-label d-block">Email address</span>
+          {{form.email}}
+        </label>
+
+        <label class="d-block mb-4">
+          <span class="form-label d-block">Enter your Password</span>
+          {{form.password1}}
+        </label>
+
+        <label class="d-block mb-4">
+          <span class="form-label d-block">Confirm your Password</span>
+          {{form.password2}}
+        </label>
+
+        <div class="mb-3">
+          <button
+            type="submit"
+            class="btn btn-primary px-3 rounded-3"
+            name="Create User"
+          >
+            Sign Up
+          </button>
+        </div>
+        <span
+          >Already have an account? <a href="{% url 'login' %}">Login</a></span
+        >
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
